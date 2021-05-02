@@ -46,6 +46,7 @@ function handleSubmit(e) {
   e.preventDefault()
   id++
   paintTodo(todoInput.value)
+  todoInput.value = ''
 }
 
 function init() {

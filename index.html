@@ -4,15 +4,79 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="src/css/style2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css"
+      integrity="sha512-r/Gan7PMSRovDus++vDS2Ayutc/cSdl268u047n4z+k7GYuR7Hiw71FsT3QQxdKJBVHYttOJ6IGLnlM9IoMToQ=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <title>Momentum</title>
   </head>
   <body>
-    <h1>할 일 To do list</h1>
-    <input type="text" placeholder="할 일을 추가 후 엔터" />
-    <h1>Not done</h1>
-    <ul class="not-done"></ul>
-    <h1>Done</h1>
-    <ul class="done"></ul>
-    <script src="src/index.js"></script>
+    <!-- 날씨 -->
+    <div class="weather">
+      <div>
+        <span class="weather__icon"></span>
+        <span class="weather__temp"></span>
+      </div>
+      <div>
+        <span class="weather__humidity"></span>
+        <span class="weather__desc"></span>
+      </div>
+      <span class="weather__city"></span>
+    </div>
+    <!-- 시계 -->
+    <div class="time-wrapper">
+      <div class="clock-wrapper">
+        <span class="main-clock"></span>
+        <span class="main-clock__seconds"></span>
+        <span class="main-clock__day"></span>
+      </div>
+      <span class="main-clock__greeting"></span>
+    </div>
+    <!-- 사용자입력 -->
+    <div class="greeting">
+      <span class="greeting__welcome">Hello, what's your name?</span>
+      <form class="greeting__form">
+        <input class="greeting__name" type="text" required />
+      </form>
+    </div>
+    <!-- 투두 -->
+    <div class="todo-container hide">
+      <span class="todo-container__close">
+        <i class="fas fa-times fa-2x"></i>
+      </span>
+      <div class="todo-frame">
+        <span class="todo-list__title"> To-do List </span>
+        <form class="todo-list__submit">
+          <input
+            class="todo-list__input"
+            type="text"
+            placeholder="할일 입력 후 엔터"
+            required
+          />
+        </form>
+        <ul class="todo-list__ul">
+          <!-- <div class="todo">
+            <li></li>
+            <button></button>
+          </div> -->
+        </ul>
+      </div>
+    </div>
+    <div class="open-todos .open-todos__show">
+      open-todo
+      <i class="fas fa-bars fa-2x"></i>
+    </div>
+    <script src="src/script/index2.js"></script>
+    <script src="src/script/weather.js"></script>
+    <script src="src/script/todos.js"></script>
   </body>
 </html>
