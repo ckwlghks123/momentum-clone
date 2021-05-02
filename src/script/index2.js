@@ -28,8 +28,8 @@ function getItem (itemname) {
 }
 function paintClocks () {
   greeting.style.display = 'none'
-  displayTime.style.display = 'flex'
   displayLeft.style.display = 'flex'
+  displayTime.style.display = 'flex'
   displayRight.style.display = 'block'
   clockMessage.innerHTML = `Welcome!! How's your day? ${getItem(user)}`
 }
@@ -54,7 +54,6 @@ function getTime() {
   seconds.innerText = `${sec < 10 ? '0'+sec : sec}`
   days.innerText = `${'['+dayArr[day]+']'}`
 }
-
 
 function init () {
   nameForm.addEventListener('submit',handleInput)

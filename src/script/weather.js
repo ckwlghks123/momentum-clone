@@ -44,10 +44,8 @@ function getSuccess(position){
     latitude,
     longitude
   }
-  saveCoords(coObj)
-}
-function saveCoords(obj){
-  localStorage.setItem(locations,JSON.stringify(obj))
+  localStorage.setItem(locations,JSON.stringify(coObj))
+  getWeather(latitude,longitude)
 }
 function getError(e){
   console.log(e.message)
@@ -57,22 +55,8 @@ function getCoords() {
   navigator.geolocation.getCurrentPosition(getSuccess,getError)
 }
 
-function loadCoords(){
-  const loadedCoords = localStorage.getItem(locations);
-  if (loadedCoords === null){
-    getCoords();
-  } else {
-    const {latitude,longitude} = JSON.parse(loadedCoords)
-    // const lat = Math.floor(latitude)
-    // const long = Math.floor(longitude)
-    // getWeather(lat,long)
-    getWeather(latitude,longitude)
-  }
-  
-}
-
 function init(){
-  loadCoords()
+  getCoords()
 }
 
 init();
