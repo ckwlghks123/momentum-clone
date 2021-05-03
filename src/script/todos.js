@@ -82,8 +82,9 @@ function objTodo(id, text) {
 function handleSubmit(e) {
     e.preventDefault();
     const id = Date.now();
-    objTodo(id, todoInput.value);
-    btnTodo(id, todoInput.value, false);
+    const text = todoInput.value;
+    objTodo(id, text);
+    btnTodo(id, text, false);
     saveTodo(todos);
     todoInput.value = '';
 }
