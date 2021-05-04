@@ -13,13 +13,7 @@ const API_KEY = 'a4fa961997fb534248cc4d6e3cd4f58b';
 //openweathermap.org/weather-conditions#Weather-Condition-Codes-2
 // icon 상태코드값 참조해서 아이콘 변경
 
-http: https: function paintWeather({
-    temp,
-    city,
-    humidity,
-    icon,
-    description,
-}) {
+function paintWeather({ temp, city, humidity, icon, description }) {
     // console.log(temp,city,humidity,icon,description);
     displayTemp.innerHTML = `${temp.toFixed(1)} <i class="wi wi-celsius"></i>`;
     displayIcon.innerHTML = `<i class="wi wi-night-clear"></i>`;
